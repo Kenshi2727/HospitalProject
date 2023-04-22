@@ -1,0 +1,3331 @@
+                                                HOSPITAL MANAGEMENT PROJECT(SECRET PASSKEY FOR DOCTOR-2727)
+                                                ===========================================================
+
+
+
+
+import java.util.*;
+interface A
+{
+static void display1()
+    {
+        System.out.println("==========================================================================================================");
+        System.out.println("                                      WELCOME TO APOLLO HOSPITAL!                                         ");
+        System.out.println("==========================================================================================================");
+        System.out.println("While these challenging times have brought many changes, at Apollo Hospitals one thing remained the same -");
+        System.out.println(" Our commitment to the safety of our patients, their loved ones and our staff. We have established a safe ");
+        System.out.println(" environment and were among the first  in the country to implement a range of rigorous protocols, which   ");
+        System.out.println("includes the following:                                                                                   ");
+        System.out.println("1) EXTRA SANITATION METHODS- Disinfecting all areas and frequently touched surfaces continuously          ");
+        System.out.println("2) SOCIAL DISTANCING- Following social distancing protocol                                                ");
+        System.out.println("3) FACE MASK- Mandating all patients and staff to wear face masks.                                        ");
+        System.out.println("       WE ARE ALWAYS THERE FOR YOU! Consult Our Trusted Surgeons, Make an appointment                     ");
+        System.out.println("==========================================================================================================");
+        System.out.println("                                      THE APOLLO WORLD OF CARE!                                           ");
+        System.out.println("==========================================================================================================");
+        System.out.println();  //gap intentionally left   
+    }
+
+static void display2()
+{
+System.out.println("----------------------------------------------------");
+System.out.println("Enter '0' for booking an appointment with the doctor");
+System.out.println("For Patient login =>Enter '1'");
+System.out.println("For Doctor  login =>Enter '2'");
+System.out.println("To exit portal=>enter '3'");
+System.out.println("To check prescription by Doctor=>Enter '4'");
+System.out.println("To fetch your Payment Record=>Enter '5' ");
+System.out.println("----------------------------------------------------");
+}
+}
+
+
+class PaymentRecord 
+{
+    Patient pt=new Patient();
+LinkedHashMap<Integer,String>  banks=new LinkedHashMap<Integer,String>(); 
+LinkedHashMap<Integer,String>  branches=new LinkedHashMap<Integer,String>();
+LinkedHashMap<Integer,String>  accountNames=new LinkedHashMap<Integer,String>();
+LinkedHashMap<Integer,Long>  accounts=new LinkedHashMap<Integer,Long>();
+LinkedHashMap<Integer,Long>  cifs=new LinkedHashMap<Integer,Long> ();
+LinkedHashMap<Integer,String> ifscs=new LinkedHashMap<Integer,String> ();   
+
+private String bank,branch,accountName,ifsc;
+private long cif,account;
+
+public PaymentRecord()
+{
+    bank ="" ;
+    branch ="" ;
+    accountName ="" ;
+    ifsc = "";
+    cif = 0;
+    account = 0;
+}
+
+
+public String getBank() {
+    return bank;
+}
+public void setBank(String bank) {
+    this.bank = bank;
+}
+public String getBranch() {
+    return branch;
+}
+public void setBranch(String branch) {
+    this.branch = branch;
+}
+public String getAccountName() {
+    return accountName;
+}
+public void setAccountName(String accountName) {
+    this.accountName = accountName;
+}
+public String getIfsc() {
+    return ifsc;
+}
+public void setIfsc(String ifsc) {
+    this.ifsc = ifsc;
+}
+public long getCif() {
+    return cif;
+}
+public void setCif(long cif) {
+    this.cif = cif;
+}
+public long getAccount() {
+    return account;
+}
+public void setAccount(long account) {
+    this.account = account;
+}
+
+public void fetchPaymentRecord(int id,String name)
+{  
+    System.out.println("==========================================================================================================");
+    System.out.println("                             PAYMENT RECORD OF "+name+"                                                     ");
+    System.out.println("==========================================================================================================");      
+    System.out.println("Enter Bank Name:"+banks.get(id));
+    System.out.println("Enter Bank Branch:"+branches.get(id));
+    System.out.println("Enter Account Holder Name:"+accountNames.get(id));
+    System.out.println("Enter your Account Number:"+accounts.get(id));
+    System.out.println("Enter CIF Number:"+cifs.get(id));
+    System.out.println("Enter IFSC Code:"+ifscs.get(id));
+    System.out.println("==========================================================================================================");  
+}
+}
+
+
+class Doctor
+{
+    
+    Patient p4=new Patient();
+private int passkey=2727;  //passkey for doctor to access data
+
+public int getPasskey() {
+    return passkey;
+}
+}
+
+
+
+
+class Patient 
+{
+private String name,bloodGroup,gender,address,email,password,symptoms,appointDay,confirm,pres;
+private float age,height,weight;
+private long adhaar,mobile;
+private int id,pincode,dd,mm,yyyy,prevId;
+private boolean flag;
+
+List<Integer> prevIds2=new ArrayList<Integer>();
+List<Integer> checker2=new ArrayList<Integer>();
+LinkedHashMap<Integer,String>  names=new LinkedHashMap<Integer,String> ();
+LinkedHashMap<Integer,String>  bloods=new LinkedHashMap<Integer,String> ();
+LinkedHashMap<Integer,String>  genders=new LinkedHashMap<Integer,String> ();
+LinkedHashMap<Integer,String>  addresses=new LinkedHashMap<Integer,String> ();
+LinkedHashMap<Integer,String>  emails=new LinkedHashMap<Integer,String> ();
+LinkedHashMap<Integer,String>  symps=new LinkedHashMap<Integer,String> ();
+LinkedHashMap<Integer,Float>  ages=new LinkedHashMap<Integer,Float> ();
+LinkedHashMap<Integer,Float>  heights=new LinkedHashMap<Integer,Float> ();
+LinkedHashMap<Integer,Float>  weights=new LinkedHashMap<Integer,Float>();
+LinkedHashMap<Integer,Long> adhaars=new LinkedHashMap<Integer,Long>();
+LinkedHashMap<Integer,Long> mobiles=new LinkedHashMap<Integer,Long>();
+LinkedHashMap<Integer,Integer> pincodes=new LinkedHashMap<Integer,Integer>();
+LinkedHashMap<Integer,Integer> m=new LinkedHashMap<Integer,Integer>();
+LinkedHashMap<Integer,Integer> d=new LinkedHashMap<Integer,Integer>();
+LinkedHashMap<Integer,Integer> y=new LinkedHashMap<Integer,Integer>();
+LinkedHashMap<Integer,String> appointDays=new LinkedHashMap<Integer,String>();
+LinkedHashMap<Integer,String> passwords=new LinkedHashMap<Integer,String>();
+LinkedHashMap<Integer,Boolean> flags=new LinkedHashMap<Integer,Boolean>();
+List<Integer> ids=new ArrayList<Integer>();
+
+LinkedHashMap<Integer,String> prescription=new LinkedHashMap<Integer,String>();
+Patient()
+{
+    name ="" ;
+    bloodGroup ="" ;
+    gender = "";
+    address ="" ;
+    email = "";
+    password ="" ;
+    symptoms ="" ;
+    appointDay="";
+    confirm="";
+    age = 0.0f;
+    height =0.0f ;
+    weight =0.0f ;
+    adhaar =0;
+    mobile =0 ;
+    id = 0;
+    pincode =0;
+    dd=0;
+    mm=0;
+    yyyy=0;
+    prevId=0;
+    flag=false;
+}
+
+
+public void setPrevId(int prevId) {
+    this.prevId = prevId;
+    prevIds2.add(prevId);   //storing previous patient ids
+    checker2.add(getId());
+}
+public String getConfirm() {
+    return confirm;
+}
+public void setConfirm(String confirm) {
+    this.confirm = confirm;
+}
+public String getName() {
+    return name;
+}
+public void setName(String name) {
+    this.name = name;
+    names.put(getId(),getName());
+
+}
+public String getBloodGroup() {
+    return bloodGroup;
+}
+public void setBloodGroup(String bloodGroup) {
+    this.bloodGroup = bloodGroup;
+    bloods.put(getId(),getBloodGroup());
+}
+public String getGender() {
+    return gender;
+}
+public void setGender(String gender) {
+    this.gender = gender;
+    genders.put(getId(),getGender());
+}
+public String getAddress() {
+    return address;
+}
+public void setAddress(String address) {
+    this.address = address;
+    addresses.put(getId(),getAddress());
+
+}
+public String getEmail() {
+    return email;
+}
+public void setEmail(String email) {
+    this.email = email;
+    emails.put(getId(),getEmail());
+}
+public String getPassword() {
+    return password;
+}
+public void setPassword(String password) {
+    this.password = password;
+    passwords.put(getId(),getPassword());
+}
+public String getSymptoms() {
+    return symptoms;
+}
+public void setSymptoms(String symptoms) {
+    this.symptoms = symptoms;
+    symps.put(getId(),getSymptoms());
+
+}
+public float getAge() {
+    return age;
+}
+public void setAge(float age) {
+    this.age = age;
+    ages.put(getId(),getAge());
+
+}
+public float getHeight() {
+    return height;
+}
+public void setHeight(float height) {
+    this.height = height;
+    heights.put(getId(),getHeight());
+}
+public float getWeight() {
+    return weight;
+}
+public void setWeight(float weight) {
+    this.weight = weight;
+    weights.put(getId(),getWeight());
+}
+public long getAdhaar() {
+    return adhaar;
+}
+public void setAdhaar(long adhaar) {
+    this.adhaar = adhaar;
+    adhaars.put(getId(),getAdhaar());
+}
+
+public long getMobile() {
+    return mobile;
+}
+public void setMobile(long mobile) {
+    this.mobile = mobile;
+    mobiles.put(getId(),getMobile());
+}
+public int getId() {
+    return id;
+}
+public void setId(int id) {
+    this.id = id;
+    
+//For ids
+ids.add(getId());
+
+}
+public int getPincode() {
+    return pincode;
+}
+public void setPincode(int pincode) {
+    this.pincode = pincode;
+    pincodes.put(getId(),getPincode());
+
+}
+public boolean isFlag() {
+    return flag;
+}
+public void setFlag(boolean flag) {
+    this.flag = flag;
+    flags.put(getId(),isFlag());
+
+}
+public int getYyyy() {
+    return yyyy;
+}
+public void setYyyy(int yyyy) {
+    this.yyyy = yyyy;
+    y.put(getId(),getYyyy());
+
+}
+public String getAppointDay() {
+    return appointDay;
+}
+public void setAppointDay(String appointDay) {
+    this.appointDay = appointDay;
+    appointDays.put(getId(),getAppointDay());
+}
+public int getDd() {
+    return dd;
+}
+public void setDd(int dd) {
+    this.dd = dd;
+    d.put(getId(),getDd());
+}
+public int getMm() {
+    return mm;
+}
+public void setMm(int mm) {
+    this.mm = mm;
+    
+m.put(getId(),getMm());
+}
+public String getPres() {
+    return pres;
+}
+public void setPres(int id,String pres) {
+    this.pres = pres;
+    prescription.put(id,pres);
+}
+
+
+public boolean checkPatientPassword(int Pid,String password)
+{
+    String pw=(String)passwords.get(Pid);
+if(ids.contains(Pid)==true && pw.equals(password)==true )
+{
+    return true;
+}
+else
+{
+    return false;
+}
+}
+
+public void fetchPatientRecord(int patientId,int x) 
+{
+    boolean response=false,tryAgain=false;
+    Scanner scan=new Scanner(System.in);
+        if(ids.contains(patientId)==false)
+        {
+    System.out.println("No Record exists! Please check whether you have entered correct patient ID");
+    System.out.println("Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':");
+    while(tryAgain==false)
+    {
+    try
+    {
+    response=scan.nextBoolean();
+    tryAgain=true;
+    }
+    catch(Exception e)
+    {
+        scan.nextLine();  //consumes \n character
+        tryAgain=false;
+        System.out.println("Enter correct response!:");
+        response=scan.nextBoolean();
+        tryAgain=true;
+    }
+    finally
+    {
+     if(tryAgain==false)
+     {
+       continue;
+     }  
+    }
+   }
+        }
+    else
+    {
+        System.out.println(); //gaps intentionally left   
+        System.out.println("==========================================================================================================");
+        System.out.println("                                   Health Record of "+((String) names.get(patientId)).toUpperCase()+"       ");
+        System.out.println("=========================================================================================================="); 
+        System.out.println(); //gaps intentionally left  
+        System.out.println("Age:"+ages.get(patientId));
+        System.out.println("Date of Birth:"+d.get(patientId)+"/"+m.get(patientId)+"/"+y.get(patientId));
+        System.out.println("Height:"+heights.get(patientId));
+        System.out.println("Blood Group:"+bloods.get(patientId));
+        System.out.println("Body weight(in kgs):"+weights.get(patientId));
+        System.out.println("Gender:"+genders.get(patientId));
+        System.out.println("Mobile number:"+ mobiles.get(patientId));
+        System.out.println("Address:"+addresses.get(patientId));
+        System.out.println("Adhaar Number:"+adhaars.get(patientId));
+        System.out.println("Pincode:"+pincodes.get(patientId));
+        System.out.println("Patient e-mail:"+emails.get(patientId));
+        System.out.println("Symptoms Experienced by the patient:"+symps.get(patientId));
+        System.out.println("Is this your first appointment? Patient response:"+flags.get(patientId));
+        System.out.println("Appointment was scheduled on :"+appointDays.get(patientId));
+        if(x==1)
+        {
+            System.out.println("Previous Patient ID(s):");
+            int kk;
+            for(kk=0;kk<prevIds2.size();kk++)
+            {
+                if(checker2.get(kk)== patientId)
+                {
+                    System.out.print(prevIds2.get(kk)+",");
+                }
+            }
+            System.out.println(); //gaps intentionally left 
+        }
+        System.out.println("Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':");
+        while(tryAgain==false)
+        {
+        try
+        {
+        response=scan.nextBoolean();
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            scan.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Enter correct response!:");
+            response=scan.nextBoolean();
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+    }
+       if(response==true)
+        {  
+            tryAgain=false;
+           int id2=0;
+        System.out.println("Enter previous Patient Id:");
+        
+        while(tryAgain==false)
+        {
+        try
+        {
+            id2=scan.nextInt();
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            scan.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Enter correct Patient ID:");
+            id2=scan.nextInt();
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       scan.nextLine();  //consumes \n character
+        if(x==0)  //for patient password mandatory
+        {
+            System.out.println("Enter password:");
+            String pass=scan.nextLine();
+        if(checkPatientPassword(id2,pass)==true && ids.contains(id2)==true)    
+        {
+        fetchPatientRecord(id2,x);
+        }
+        else
+        {
+            System.out.println("Wrong Patient Id/Password entered!");
+        }
+    }
+    else
+    {
+        fetchPatientRecord(id2,x);
+    }
+    }
+    }
+}
+
+
+
+
+
+class Appointment 
+{
+public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    Patient p=new Patient();
+    Doctor d=new Doctor();
+    PaymentRecord pr=new PaymentRecord();
+    ArrayList<Integer> check=new ArrayList<Integer>();
+    List<Integer> prevIds=new ArrayList<Integer>();
+    List<Integer> checker1=new ArrayList<Integer>();
+
+    Boolean tryAgain=false;
+    long t;
+    int c=0,q;
+    A.display1();
+    A.display2();
+    byte choice=-1;
+    boolean activeTab=false;
+    while(tryAgain==false)
+    {
+    try
+    {
+    choice=sc.nextByte(); //0,1,2,3,4 or 5
+    tryAgain=true;
+    }
+    catch(Exception e)
+    {
+             sc.nextLine();  //consumes \n character
+             tryAgain=false;
+             System.out.println("Incorrect Input!Please enter correct '0','1','2','3','4'or '5' for using our services:");
+             choice=sc.nextByte();
+             tryAgain=true;
+    }
+    finally
+             {
+              if(tryAgain==false)
+              {
+                continue;
+              }  
+             }
+            }
+            tryAgain=false;  //reintializing to 'false' for other try-catch block
+    sc.nextLine();  //consumes \n character
+    int i=1247;
+    int j=0;   
+    do{
+    if(choice==0)  //booking appointment
+    { 
+        
+        p.setId(i);  //generating patient id
+        i++;
+        
+        activeTab=true;
+        System.out.println("==========================================================================================================");
+        System.out.println("                                         PATIENT       FORM                                               ");
+        System.out.println("==========================================================================================================");
+        System.out.println("Enter full name of Patient:");
+        p.setName(sc.nextLine());
+        System.out.println("-----------------------------------");  
+        System.out.println("Enter your age(in years):");
+        tryAgain=false;
+        while(tryAgain==false)
+        {
+        try
+        {
+        float Age=sc.nextFloat();
+        while(Age<=0)
+        {
+            System.out.println("Age cannot be negative or Zero!Enter correct age:");
+            Age=sc.nextFloat();
+        }
+        p.setAge(Age);
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+        System.out.println("Enter correct age:");
+        float Age=sc.nextFloat();
+        while(Age<=0)
+        {
+            System.out.println("Age cannot be negative or Zero!Enter correct age:");
+            Age=sc.nextFloat();
+        }
+        p.setAge(Age); 
+        tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        System.out.println("-----------------------------------");
+        System.out.println("Enter your Date of birth:");
+        System.out.println("Day:");
+        while(tryAgain==false)
+        {
+        try{
+            int days=sc.nextInt();
+            while(days<=0 || days>31)
+            {
+                System.out.println("Enter correct day:");
+                days=sc.nextInt();
+            }
+        p.setDd(days);
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Enter correct day:");
+            int days=sc.nextInt();
+            while(days<=0 || days>31)
+            {
+                System.out.println("Enter correct day:");
+                days=sc.nextInt();
+            }
+        p.setDd(days);
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+       System.out.println("Month:");
+       while(tryAgain==false)
+       {
+        try
+        {
+            int months=sc.nextInt();
+            while(months<=0 || months>12)
+            {
+                System.out.println("Enter correct month:");
+                months=sc.nextInt();
+            }
+        p.setMm(months);
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Enter correct Month:");
+            int months=sc.nextInt();
+            while(months<=0 || months>12)
+            {
+                System.out.println("Enter correct month:");
+                months=sc.nextInt();
+            }
+        p.setMm(months);
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+       System.out.println("Year:");
+       while(tryAgain==false)
+       {
+        try
+        {
+        int years=sc.nextInt();
+        while(years<=0 || years>2023)
+        {
+            System.out.println("Enter correct year:");
+            years=sc.nextInt();
+        }
+        p.setYyyy(years);
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Enter correct Year:");
+            int years=sc.nextInt();
+            while(years<=0 || years>2023)
+            {
+                System.out.println("Enter correct year:");
+                years=sc.nextInt();
+            }
+            p.setYyyy(years);
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        System.out.println("-----------------------------------");
+        System.out.println("Enter height(in cm):");
+        while(tryAgain==false)
+        {
+        try
+        {
+            float ht=sc.nextFloat();
+            while(ht<=0)
+            {
+                System.out.println("Height cannot be negative or Zero!Enter correct height:");
+                ht=sc.nextFloat();
+            }
+        p.setHeight(ht);
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Enter correct Height:");
+            float ht=sc.nextFloat();
+            while(ht<=0)
+            {
+                System.out.println("Height cannot be negative or Zero!Enter correct height:");
+                ht=sc.nextFloat();
+            }
+        p.setHeight(ht);
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        sc.nextLine();  //consumes \n character
+        System.out.println("-----------------------------------");
+        System.out.println("Enter your blood group:");
+        while(tryAgain==false)
+        {
+        try
+        {
+        p.setBloodGroup(sc.nextLine());
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            tryAgain=false;
+            System.out.println("Enter correct Blood Group:");
+            p.setBloodGroup(sc.nextLine());
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        System.out.println("-----------------------------------");
+        System.out.println("Enter your body weight(in kgs):");
+        while(tryAgain==false)
+        {
+        try
+        {
+            float bw=sc.nextFloat();
+            while(bw<=0)
+            {
+                System.out.println("Body weight cannot be negative or Zero!Enter correct body weight:");
+                bw=sc.nextFloat();
+            }
+        
+        p.setWeight(bw);
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Enter correct body weight:");
+            float bw=sc.nextFloat();
+            while(bw<=0)
+            {
+                System.out.println("Body weight cannot be negative or Zero!Enter correct body weight:");
+                bw=sc.nextFloat();
+            }
+        
+        p.setWeight(bw);
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        sc.nextLine();  //consumes \n character
+        System.out.println("-----------------------------------");
+        System.out.println("Please tell your Gender:");
+        while(tryAgain==false)
+        {
+        try
+        {
+        p.setGender(sc.nextLine());
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            tryAgain=false;
+            System.out.println("Enter correct Gender:");
+            p.setGender(sc.nextLine()); 
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        System.out.println("-----------------------------------");
+        System.out.println("Enter your Mobile Number:");
+        while(tryAgain==false)
+        {
+        try
+        {
+            long mn=sc.nextLong();
+            t=mn;
+            c=0;
+            while(t!=0)
+            {
+            q=(int)t%10;
+            c++;
+            t=t/10;
+            }
+            while(mn<=0 || c!=10)
+            {
+                System.out.println("Please enter correct 10-digit mobile number:");
+                mn=sc.nextLong();
+                t=mn;
+                c=0;
+                while(t!=0)
+                {
+                q=(int)t%10;
+                c++;
+                t=t/10;
+                }
+            }
+    
+        p.setMobile(mn);
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+        System.out.println("Enter correct Mobile Number:"); 
+        long mn=sc.nextLong();
+        t=mn;
+        c=0;
+        while(t!=0)
+        {
+        q=(int)t%10;
+        c++;
+        t=t/10;
+        }
+        while(mn<=0 || c!=10)
+        {
+            System.out.println("Please enter correct 10-digit mobile number:");
+            mn=sc.nextLong();
+            t=mn;
+            c=0;
+            while(t!=0)
+            {
+            q=(int)t%10;
+            c++;
+            t=t/10;
+            }
+        }
+
+    p.setMobile(mn);
+        tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        sc.nextLine();  //consumes \n character
+        System.out.println("-----------------------------------");
+        System.out.println("Enter your address:");
+        p.setAddress(sc.nextLine());
+        System.out.println("-----------------------------------");
+        System.out.println("Enter your adhaar number:");
+        while(tryAgain==false)
+        {
+        try
+        {
+        long ad=sc.nextLong();
+        t=ad;
+        c=0;
+        while(t!=0)
+        {
+        q=(int)t%10;
+        c++;
+        t=t/10;
+        }
+        while(c!=12 || ad<0)
+        {
+            System.out.println("Enter correct 12-digit adhaar number!:");
+            ad=sc.nextLong();
+            t=ad;
+            c=0;
+            while(t!=0)
+            {
+            q=(int)t%10;
+            c++;
+            t=t/10;
+            }
+        }
+        p.setAdhaar(ad);
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Enter correct adhaar number:");
+            long ad=sc.nextLong();
+            t=ad;
+            c=0;
+            while(t!=0)
+            {
+            q=(int)t%10;
+            c++;
+            t=t/10;
+            }
+            while(c!=12 || ad<0)
+            {
+                System.out.println("Enter correct 12-digit adhaar number!:");
+                ad=sc.nextLong();
+                t=ad;
+                c=0;
+                while(t!=0)
+                {
+                q=(int)t%10;
+                c++;
+                t=t/10;
+                }
+            }
+            p.setAdhaar(ad);
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        System.out.println("-----------------------------------");
+        System.out.println("Enter pincode of your area:");
+        while(tryAgain==false)
+        {
+        try
+        {
+        int pin=sc.nextInt();
+        t=pin;
+        c=0;
+        while(t!=0)
+        {
+        q=(int)t%10;
+        c++;
+        t=t/10;
+        }
+        while(c!=6 || pin<0)
+        {
+            System.out.println("Enter correct 6-digit pincode:");
+            pin=sc.nextInt();
+            t=pin;
+            c=0;
+            while(t!=0)
+            {
+            q=(int)t%10;
+            c++;
+            t=t/10;
+            }
+        }
+        p.setPincode(pin);
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Enter correct pincode:");
+            int pin=sc.nextInt();
+            t=pin;
+            c=0;
+            while(t!=0)
+            {
+            q=(int)t%10;
+            c++;
+            t=t/10;
+            }
+            while(c!=6 || pin<0)
+            {
+                System.out.println("Enter correct 6-digit pincode:");
+                pin=sc.nextInt();
+                t=pin;
+                c=0;
+                while(t!=0)
+                {
+                q=(int)t%10;
+                c++;
+                t=t/10;
+                }
+            }
+            p.setPincode(pin);
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        sc.nextLine();  //consumes \n character
+        System.out.println("-----------------------------------");
+        System.out.println("Enter your e-mail:");
+        String mail=sc.nextLine();
+        while(mail.indexOf("@")<0 && mail.indexOf(".")<0)
+        {
+            System.out.println("Enter correct e-mail:");
+            mail=sc.nextLine();
+        }
+        p.setEmail(mail);
+        System.out.println("-----------------------------------");
+        System.out.println("Please tell us about your symptoms:");
+        p.setSymptoms(sc.nextLine());
+        System.out.println("-----------------------------------");
+        System.out.println("Is this your first appointment? Enter 'true' otherwise 'false': ");
+        while(tryAgain==false)
+        {
+        try
+        {
+        p.setFlag(sc.nextBoolean());
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Please enter correct response(Enter 'true' otherwise 'false'):");
+            p.setFlag(sc.nextBoolean());
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        System.out.println("-----------------------------------");
+        if(p.isFlag()==false)
+        {
+          int k=0;
+          System.out.println("Please enter your previous Patient Ids OR enter '11' to skip:");
+          System.out.println("/////////////////////////////////////////////////////////////////////////////////////////////");
+          System.out.println("PREVIOUS PATIENT IDs WILL BE USED BY DOCTOR TO CHECK YOUR OLD HOSPITAL RECORDS FOR REFERENCE! ");
+          System.out.println("/////////////////////////////////////////////////////////////////////////////////////////////");
+          System.out.println();  //GAP LEFT INTENTIONALLY
+          while(k!=11)
+          {
+            tryAgain=false;
+            while(tryAgain==false)
+            {
+            try
+            {
+            k=sc.nextInt();
+            tryAgain=true;
+            if(k!=11)
+            {
+            while(k<1247)
+            {
+                System.out.println("Incorrect Patient ID! Please re enter correct patient ID:");
+                k=sc.nextInt();
+            }
+            tryAgain=true;
+        }
+            
+            }
+            catch(Exception e)
+            {
+                sc.nextLine();  //consumes \n character
+                tryAgain=false;
+                System.out.println("Enter correct Patient ID");
+                k=sc.nextInt();
+                if(k!=11)
+                {
+                while(k<1247)
+                {
+                    System.out.println("Incorrect Patient ID! Please re enter correct patient ID:");
+                    k=sc.nextInt();
+                }
+            }
+                tryAgain=true;
+            }
+            finally
+            {
+             if(tryAgain==false)
+             {
+               continue;
+             }  
+            }
+           }
+           tryAgain=false;
+            if(k!=11)
+            {
+            prevIds.add(k);
+            checker1.add(p.getId());
+            p.setPrevId(k);
+               
+            }
+          }
+        }
+        
+        sc.nextLine();  //consumes \n character
+        System.out.println("Please set up your password:");
+        System.out.println("====================================================================================================");
+        System.out.println("There are some easy steps you can follow to create strong passwords:");
+        System.out.println("* Use passphrases: a string of words, like a favorite song lyric or quote, can be easier to remember");
+        System.out.println("and harder to guess than a complex password.                                                        ");
+        System.out.println("* Avoid using personally identifiable information like your name or birthdate.                      ");
+        System.out.println("* Use a password manager to generate and store random, complex passwords.                           ");
+        System.out.println("====================================================================================================");
+        p.setPassword(sc.nextLine());
+        System.out.println("-----------------------------------");
+        System.out.println("Please confirm your password:");
+        p.setConfirm(sc.nextLine());
+        while(p.getConfirm().equals(p.getPassword())==false)
+        {
+        System.out.println("Password mismatched!Please enter correct password to confirm:");
+        p.setConfirm(sc.nextLine());
+        }
+        System.out.println("-----------------------------------");
+        System.out.println("====================================================================================================");
+        System.out.println("Remember, it's important to keep your passwords private and never share them with anyone else.      ");
+        System.out.println(" Also, avoid writing them down in an insecure location.                                             ");
+        System.out.println("====================================================================================================");
+        //appointing 
+        if(j==8)
+        {
+            j=0;
+            p.setAppointDay("Monday");
+        }
+        else
+        {
+        if(j==0)
+        p.setAppointDay("Monday");
+        else if(j==1)
+        p.setAppointDay("Tuesday");
+        else if(j==2)
+        p.setAppointDay("Wednesday");
+        else if(j==3)
+        p.setAppointDay("Thursday");
+        else if(j==4)
+        p.setAppointDay("Friday");
+        else if(j==5)
+        p.setAppointDay("Saturday");
+        else if(j==6)
+        p.setAppointDay("Sunday");
+        }
+        j++;
+        //end
+
+        System.out.println("Please complete a payment of ?10000/- to book your appointment:");
+        System.out.println("Enter Bank Name:");
+        pr.setBank(sc.nextLine());
+        pr.banks.put(p.getId(),pr.getBank());
+        System.out.println("Enter Bank Branch:");
+        pr.setBranch(sc.nextLine());
+        pr.branches.put(p.getId(),pr.getBranch());
+        System.out.println("Enter Account Holder Name:");
+        pr.setAccountName(sc.nextLine());
+        pr.accountNames.put(p.getId(),pr.getAccountName());
+        System.out.println("Enter your Account Number:");
+        while(tryAgain==false)
+        {
+        try
+        {
+        
+        pr.setAccount(sc.nextLong());
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Please enter correct Account number:");
+            pr.setAccount(sc.nextLong());
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        pr.accounts.put(p.getId(),pr.getAccount());
+        System.out.println("Enter CIF Number:");
+        while(tryAgain==false)
+        {
+        try
+        {
+        pr.setCif(sc.nextLong());
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Please enter correct CIF Number:");
+            pr.setCif(sc.nextLong());
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        pr.cifs.put(p.getId(),pr.getCif());
+        sc.nextLine();  //consumes \n character
+        System.out.println("Enter IFSC Code:");
+        String iFsc=sc.nextLine();
+        int f=0,u=0;
+        boolean hh=false;
+        int io;
+        while(u==0)
+        {
+            if(iFsc.length()==11)
+            {
+        for(int ij='A';ij<='Z';ij++)
+        {
+         if(iFsc.charAt(0)!=-1)
+         {
+            f=1;
+            break;
+         }
+         else
+         {
+            f=0;
+         }
+        }
+        for(int ij='A';ij<='Z';ij++)
+        {
+         if(iFsc.charAt(1)!=-1)
+         {
+            f=1;
+            break;
+         }
+         else
+         {
+            f=0;
+         }
+        }
+        for(int ij='A';ij<='Z';ij++)
+        {
+         if(iFsc.charAt(2)!=-1)
+         {
+            f=1;
+            break;
+         }
+         else
+         {
+            f=0;
+         }
+        }
+        for(int ij='A';ij<='Z';ij++)
+        {
+         if(iFsc.charAt(3)!=-1)
+         {
+            f=1;
+            break;
+         }
+         else
+         {
+            f=0;
+         }
+         
+        }
+     for(io=4;io<=10;io++)
+     {
+         if(iFsc.charAt(io)<48 || iFsc.charAt(io)>57)
+         {
+         hh=false;
+         break;
+         }
+         else
+         {
+         hh=true;
+         }
+     }
+    }
+        if(f==1 && iFsc.length()==11 && hh==true)
+        {
+            u=1;
+        }
+        else
+        {
+            System.out.println("Enter correct IFSC code!:");
+            iFsc=sc.nextLine();   
+        }
+    }
+        pr.ifscs.put(p.getId(),iFsc);
+
+        System.out.println("==========================================================================================================");
+        System.out.println("                                    YOUR PAYMENT IS COMPLETED!                                            ");
+        System.out.println("==========================================================================================================");
+        
+        
+    System.out.println();
+    System.out.println(); //gaps intentionally left   
+    System.out.println("==========================================================================================================");
+    System.out.println("                                    YOUR APPOINTMENT IS BOOKED!                                           ");
+    System.out.println("==========================================================================================================");
+    System.out.println("Name of Patient:"+p.getName());
+    System.out.println("Age:"+p.getAge());
+    System.out.println("Date of Birth:"+p.getDd()+"/"+p.getMm()+"/"+p.getYyyy());
+    System.out.println("Height:"+p.getHeight());
+    System.out.println("Blood Group:"+p.getBloodGroup());
+    System.out.println("Body weight(in kgs):"+p.getWeight());
+    System.out.println("Gender:"+p.getGender());
+    System.out.println("Mobile number:"+p.getMobile());
+    System.out.println("Address:"+p.getAddress());
+    System.out.println("Adhaar Number:"+p.getAdhaar());
+    System.out.println("Pincode:"+p.getPincode());
+    System.out.println("Your e-mail:"+p.getEmail());
+    System.out.println("Symptoms Experienced by you:"+p.getSymptoms());
+    System.out.println("Is this your first appointment? Your respnse:"+p.isFlag());
+    if(p.isFlag()==true)
+    System.out.println("Patient ID Allocated:"+p.getId());
+    else
+    {
+    System.out.println("Your new Patient ID allocated:"+p.getId());
+    System.out.println("You previous Patient Id(s):");
+    int kk;
+    for(kk=0;kk<prevIds.size();kk++)
+    {
+        if(checker1.get(kk)==p.getId())
+        {
+            System.out.print(prevIds.get(kk)+",");
+        }
+    }
+    System.out.println(); //gaps intentionally left  
+    }
+    System.out.println("Your appointment is scheduled on :"+p.getAppointDay());
+    System.out.println("==========================================================================================================");
+    System.out.println("                        KINDLY CHECK THE DEATILS FILLED BY YOU IN THE FORM!                               ");
+    System.out.println("==========================================================================================================");
+    System.out.println();
+    System.out.println(); //gaps intentionally left  
+    
+}
+
+    
+    else if(choice==1) //patient login
+    {
+    activeTab=true;
+    int pid=0;
+    System.out.println("Enter your Patient ID:");
+    tryAgain=false;
+    while(tryAgain==false)
+    {
+    try
+    {
+    pid=sc.nextInt();
+    tryAgain=true;
+    }
+    catch(Exception e)
+    {
+        sc.nextLine();  //consumes \n character
+        tryAgain=false;
+        System.out.println("Enter correct Patient ID:");
+        pid=sc.nextInt();
+        tryAgain=true;
+    }
+    finally
+    {
+     if(tryAgain==false)
+     {
+       continue;
+     }  
+    }
+   }
+   tryAgain=false;
+    sc.nextLine();  //consumes \n character
+    System.out.println("Enter your password:");
+    String pass=sc.nextLine();
+    if(p.checkPatientPassword(pid,pass)==true && p.ids.contains(pid)==true)
+    {
+    System.out.println(); //gaps intentionally left  
+    System.out.println("==========================================================================================================");
+    System.out.println("                                      WELCOME BACK!"+p.names.get(pid)+"                                     ");
+    p.fetchPatientRecord(pid,0);
+    }
+    else
+    {
+        System.out.println("Wrong password/Patient ID entered!");
+    }
+}
+    else if(choice==2) //doctor login
+    {
+        tryAgain=false;
+        int key=0;
+        activeTab=true;
+        System.out.println("Enter the SECRET PASSKEY:");
+        while(tryAgain==false)
+        { 
+        try
+        {
+        key=sc.nextInt();
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("INVALID INPUT!Please re enter your SECRET PASSKEY:");
+            key=sc.nextInt();
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        if(key==d.getPasskey())
+        {
+        System.out.println(); //gaps intentionally left  
+        System.out.println("==========================================================================================================");
+        System.out.println("                                           WELCOME DOCTOR!                                                ");
+        System.out.println("==========================================================================================================");
+        System.out.println(); //gaps intentionally left  
+        byte exit=1;
+        while(exit!=0)
+        {
+            tryAgain=false;
+        System.out.println("Enter the patient ID to fetch details of the patient:");
+        int pID=0;
+        while(tryAgain==false)
+        { 
+            try
+            {
+            pID=sc.nextInt();
+            tryAgain=true;
+            }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Please enter correct Patient ID!:");
+            pID=sc.nextInt();
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+
+        p.fetchPatientRecord(pID,1);
+        sc.nextLine();  //consumes \n character
+        if(pID!=0)
+        {
+        if(check.contains(pID)== false)
+        {
+        System.out.println("Please add prescription for Patient:");
+        String pc=sc.nextLine();
+        p.setPres(pID,pc);   //doctor adds prescription for current booking after checkup
+        check.add(pID);
+        }
+        }
+        System.out.println("Enter '7' to fetch Payment Record of Patient OR enter any one digit number(excluding '7') to skip:");
+        while(tryAgain==false)
+        { 
+        try
+        {
+        exit=sc.nextByte();
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Please enter correct response!:");
+            exit=sc.nextByte();
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        if(exit==7)
+        {
+            tryAgain=false;
+
+            int PD=0;
+            System.out.println("Please enter Patient ID:");
+            while(tryAgain==false)
+            { 
+            try
+            {
+            PD=sc.nextInt();
+            tryAgain=true;
+            }
+            catch(Exception e)
+            {
+                sc.nextLine();  //consumes \n character
+                tryAgain=false;
+                System.out.println("Enter correct Patient ID:");
+                PD=sc.nextInt();
+                tryAgain=true;
+            }
+            finally
+            {
+             if(tryAgain==false)
+             {
+               continue;
+             }  
+            }
+           }
+           tryAgain=false;
+            pr.fetchPaymentRecord(PD,((String)p.names.get(PD)).toUpperCase());  
+        }
+
+        System.out.println("Enter '0' to exit OR enter any no. b/w '1' & '9'(both inclusive) to continue fetch details of other patients:");
+        tryAgain=false;
+        while(tryAgain==false)
+        { 
+        try
+        {
+        exit=sc.nextByte();
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Please enter correct response!:");
+            exit=sc.nextByte();
+            tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        }
+        }
+        else
+        System.out.println("Wrong passkey entered!!!!");
+    }
+    else if(choice==4)  //prescription
+    {
+        int patId=0;
+        activeTab=true;
+        System.out.println("Enter your Patient ID");
+        tryAgain=false;
+        while(tryAgain==false)
+        { 
+        try
+        {
+        patId=sc.nextInt();
+        tryAgain=true;
+        sc.nextLine();  //consumes \n character
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+        System.out.println("Enter valid Patient ID:");
+        patId=sc.nextInt();
+        sc.nextLine();  //consumes \n character
+        tryAgain=true;
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        System.out.println("Enter your password:");
+        String passW=sc.nextLine();
+        if(p.checkPatientPassword(patId,passW)==true && p.ids.contains(patId)==true)
+        {
+        if(check.contains(patId)== true)
+        {
+        System.out.println("Prescription by Doctor:"+p.prescription.get(patId));
+        }
+        else
+        {
+            System.out.println("No prescription found!Either you have not visited the Hospital or your prescription is not updated yet on portal!");
+        }
+    }
+    else
+    {
+      System.out.println("WRONG PATIENT ID/PASSWORD ENTERED!");  
+    }
+    }
+    else if(choice ==5) //payments
+    {
+        tryAgain=false;
+        int pd=0;
+        activeTab=true;
+        System.out.println("Enter your Patient ID/Previous Patient ID:");
+        while(tryAgain==false)
+        { 
+        try
+        {
+        pd=sc.nextInt();
+        sc.nextLine();  //consumes \n character
+        tryAgain=true;
+        }
+        catch(Exception e)
+        {
+            sc.nextLine();  //consumes \n character
+            tryAgain=false;
+            System.out.println("Enter correct Patient ID!:");
+            pd=sc.nextInt();
+            tryAgain=true;
+            sc.nextLine();  //consumes \n character
+        }
+        finally
+        {
+         if(tryAgain==false)
+         {
+           continue;
+         }  
+        }
+       }
+       tryAgain=false;
+        System.out.println("Enter your password:");
+        String passWord=sc.nextLine();
+        if(p.checkPatientPassword(pd,passWord)==true && p.ids.contains(pd)==true)
+        {
+            pr.fetchPaymentRecord(pd,((String)(p.names.get(pd))).toUpperCase());
+        }
+        else
+        {
+        System.out.println("WRONG PATIENT ID/PASSWORD ENTERED!");    
+        }
+    }
+    else
+    {
+        activeTab=true;
+        System.out.println("Incorrect Input!");
+    }
+    if(activeTab==true)
+    {
+    A.display2();
+    while(tryAgain==false)
+        {
+    try{
+    choice=sc.nextByte();
+    tryAgain=true;
+    }
+    catch(Exception e)
+    {   
+             sc.nextLine();  //consumes \n character
+             tryAgain=false;
+             System.out.println("Incorrect Input!Please enter correct '0','1','2','3','4'or '5' for using our services:");
+             choice=sc.nextByte();
+             tryAgain=true;
+    }
+    finally
+             {
+              if(tryAgain==false)
+              {
+                continue;
+              }  
+             }
+            }
+    sc.nextLine();  //consumes \n character
+    if(choice==3)
+    {
+        System.out.println("**********************************");
+        System.out.println("THANK YOU FOR VISITING OUR PORTAL!");
+        System.out.println("**********************************");
+        System.out.println("---------------------------------------------------------------------------------------------------------------");
+        System.out.println("Apollo Hospitals is a leading healthcare group in India. It comprises of a network of 73 hospitals with over   ");
+        System.out.println("10,000 beds, more than 4,500 pharmacies, over 300 clinics, 1,100 diagnostic centers, and 200 telemedicine units");
+        System.out.println("The headquarters of Apollo Hospitals is located in Chennai, Tamil Nadu, India. The hospital chain provides     ");
+        System.out.println("quality healthcare services to its patients with modern medical technologies and expertise from highly skilled ");
+        System.out.println("medical professionals. The hospitals are located across major cities in India, including Chennai, Hyderabad,   ");
+        System.out.println("Delhi, Mumbai, Kolkata, and Bangalore.                                                                         ");
+        System.out.println("---------------------------------------------------------------------------------------------------------------");
+    }
+    
+    }
+
+    }while(choice!=3);
+}
+}
+
+
+
+
+
+
+
+OUTPUT-
+======
+==========================================================================================================
+                                      WELCOME TO APOLLO HOSPITAL!
+==========================================================================================================
+While these challenging times have brought many changes, at Apollo Hospitals one thing remained the same -
+ Our commitment to the safety of our patients, their loved ones and our staff. We have established a safe
+ environment and were among the first  in the country to implement a range of rigorous protocols, which
+includes the following:
+1) EXTRA SANITATION METHODS- Disinfecting all areas and frequently touched surfaces continuously
+2) SOCIAL DISTANCING- Following social distancing protocol
+3) FACE MASK- Mandating all patients and staff to wear face masks.
+       WE ARE ALWAYS THERE FOR YOU! Consult Our Trusted Surgeons, Make an appointment
+==========================================================================================================
+                                      THE APOLLO WORLD OF CARE!
+==========================================================================================================
+
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+0
+==========================================================================================================
+                                         PATIENT       FORM
+==========================================================================================================
+Enter full name of Patient:
+Abhishek Mathur
+-----------------------------------
+Enter your age(in years):
+20
+-----------------------------------
+Enter your Date of birth:
+Day:
+13
+Month:
+01
+Year:
+2003
+-----------------------------------
+Enter height(in cm):
+189.8
+-----------------------------------
+Enter your blood group:
+AB+
+-----------------------------------
+Enter your body weight(in kgs):
+61.4
+-----------------------------------
+Please tell your Gender:
+Male
+-----------------------------------
+Enter your Mobile Number:
+6388943469
+-----------------------------------
+Enter your address:
+Jankipuram,lucknow,Uttar pradesh
+-----------------------------------
+Enter your adhaar number:
+314487065402
+-----------------------------------
+Enter pincode of your area:
+226021
+-----------------------------------
+Enter your e-mail:
+abhishekmathurofficial@gmail.com
+-----------------------------------
+Please tell us about your symptoms:
+cough and fever
+-----------------------------------
+Is this your first appointment? Enter 'true' otherwise 'false':
+true
+-----------------------------------
+Please set up your password:
+====================================================================================================
+There are some easy steps you can follow to create strong passwords:
+* Use passphrases: a string of words, like a favorite song lyric or quote, can be easier to remember
+and harder to guess than a complex password.
+* Avoid using personally identifiable information like your name or birthdate.
+* Use a password manager to generate and store random, complex passwords.
+====================================================================================================
+abhi@2727
+-----------------------------------
+Please confirm your password:
+abhi@2727
+-----------------------------------
+====================================================================================================
+Remember, it's important to keep your passwords private and never share them with anyone else.
+ Also, avoid writing them down in an insecure location.
+====================================================================================================
+Please complete a payment of ?10000/- to book your appointment:
+Enter Bank Name:
+State Bank of India
+Enter Bank Branch:
+Jankipuram
+Enter Account Holder Name:
+Mrs. Priyanka Mathur
+Enter your Account Number:
+2534623654432
+Enter CIF Number:
+2344433434432
+Enter IFSC Code:
+SBIN4567123
+==========================================================================================================
+                                    YOUR PAYMENT IS COMPLETED!
+==========================================================================================================
+
+
+==========================================================================================================
+                                    YOUR APPOINTMENT IS BOOKED!
+==========================================================================================================
+Name of Patient:Abhishek Mathur
+Age:20.0
+Date of Birth:13/1/2003
+Height:189.8
+Blood Group:AB+
+Body weight(in kgs):61.4
+Gender:Male
+Mobile number:6388943469
+Address:Jankipuram,lucknow,Uttar pradesh
+Adhaar Number:314487065402
+Pincode:226021
+Your e-mail:abhishekmathurofficial@gmail.com
+Symptoms Experienced by you:cough and fever
+Is this your first appointment? Your respnse:true
+Patient ID Allocated:1247
+Your appointment is scheduled on :Monday
+==========================================================================================================
+                        KINDLY CHECK THE DEATILS FILLED BY YOU IN THE FORM!
+==========================================================================================================
+
+
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+0
+==========================================================================================================
+                                         PATIENT       FORM
+==========================================================================================================
+Enter full name of Patient:
+Kushagra Srivastava
+-----------------------------------
+Enter your age(in years):
+ii
+Enter correct age:
+21
+-----------------------------------
+Enter your Date of birth:
+Day:
+**
+Enter correct day:
+19
+Month:
+*//k
+Enter correct Month:
+2
+Year:
+ksks
+Enter correct Year:
+2002
+-----------------------------------
+Enter height(in cm):
+124.89
+-----------------------------------
+Enter your blood group:
+B+
+-----------------------------------
+Enter your body weight(in kgs):
+oip
+Enter correct body weight:
+89.56
+-----------------------------------
+Please tell your Gender:
+Male
+-----------------------------------
+Enter your Mobile Number:
+2163475483548453223458
+Enter correct Mobile Number:
+7685432097
+-----------------------------------
+Enter your address:
+Balaganj,Lucknow,Uttar Pradesh
+-----------------------------------
+Enter your adhaar number:
+25463752673452675623356274
+Enter correct adhaar number:
+12345098765673
+Enter correct 12-digit adhaar number!:
+123456789012
+-----------------------------------
+Enter pincode of your area:
+**;;
+Enter correct pincode:
+226021
+-----------------------------------
+Enter your e-mail:
+kushagrarocks!
+Enter correct e-mail:
+kushagraocks@gmail.com
+-----------------------------------
+Please tell us about your symptoms:
+Bloody stools at night
+-----------------------------------
+Is this your first appointment? Enter 'true' otherwise 'false':
+true
+-----------------------------------
+Please set up your password:
+====================================================================================================
+There are some easy steps you can follow to create strong passwords:
+* Use passphrases: a string of words, like a favorite song lyric or quote, can be easier to remember
+and harder to guess than a complex password.
+* Avoid using personally identifiable information like your name or birthdate.
+* Use a password manager to generate and store random, complex passwords.
+====================================================================================================
+kushu@####
+-----------------------------------
+Please confirm your password:
+kushu22828
+Password mismatched!Please enter correct password to confirm:
+kushu@####
+-----------------------------------
+====================================================================================================
+Remember, it's important to keep your passwords private and never share them with anyone else.
+ Also, avoid writing them down in an insecure location.
+====================================================================================================
+Please complete a payment of ?10000/- to book your appointment:
+Enter Bank Name:
+Punjab National Bank
+Enter Bank Branch:
+Gomti Nagar
+Enter Account Holder Name:
+Mr. Kushagra Srivastava
+Enter your Account Number:
+75624382393432489
+Enter CIF Number:
+243423424242
+Enter IFSC Code:
+PUNB5678334
+==========================================================================================================
+                                    YOUR PAYMENT IS COMPLETED!
+==========================================================================================================
+
+
+==========================================================================================================
+                                    YOUR APPOINTMENT IS BOOKED!
+==========================================================================================================
+Name of Patient:Kushagra Srivastava
+Age:21.0
+Date of Birth:19/2/2002
+Height:124.89
+Blood Group:B+
+Body weight(in kgs):89.56
+Gender:Male
+Mobile number:7685432097
+Address:Balaganj,Lucknow,Uttar Pradesh
+Adhaar Number:123456789012
+Pincode:226021
+Your e-mail:kushagraocks@gmail.com
+Symptoms Experienced by you:Bloody stools at night
+Is this your first appointment? Your respnse:true
+Patient ID Allocated:1248
+Your appointment is scheduled on :Tuesday
+==========================================================================================================
+                        KINDLY CHECK THE DEATILS FILLED BY YOU IN THE FORM!
+==========================================================================================================
+
+
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+0
+==========================================================================================================
+                                         PATIENT       FORM
+==========================================================================================================
+Enter full name of Patient:
+Diya Chandola
+-----------------------------------
+Enter your age(in years):
+78
+-----------------------------------
+Enter your Date of birth:
+Day:
+*/
+Enter correct day:
+haha
+Enter correct day:
+14
+Month:
+//
+Enter correct Month:
+hurr
+Enter correct Month:
+1
+Year:
+jfdbfjfbj hurrr hattt
+Enter correct Year:
+2024
+Enter correct year:
+1945
+-----------------------------------
+Enter height(in cm):
+0
+Height cannot be negative or Zero!Enter correct height:
+-87
+Height cannot be negative or Zero!Enter correct height:
+135.79
+-----------------------------------
+Enter your blood group:
+A+
+-----------------------------------
+Enter your body weight(in kgs):
+56
+-----------------------------------
+Please tell your Gender:
+Female
+-----------------------------------
+Enter your Mobile Number:
+7890432658
+-----------------------------------
+Enter your address:
+Vikas Nagar,Lucknow,Nepal
+-----------------------------------
+Enter your adhaar number:
+16373823681
+Enter correct 12-digit adhaar number!:
+haha wo dekho
+Enter correct adhaar number:
+123456780156
+-----------------------------------
+Enter pincode of your area:
+ha ha **
+Enter correct pincode:
+lets play badminton budhiya
+Enter correct pincode:
+respect elderly please
+Enter correct pincode:
+226098
+-----------------------------------
+Enter your e-mail:
+ageold hotmail
+Enter correct e-mail:
+*****dia comk
+Enter correct e-mail:
+diyachnad@gmail.com
+-----------------------------------
+Please tell us about your symptoms:
+Rinkles on face.Need plastic surgery on immediate basis for a family function
+-----------------------------------
+Is this your first appointment? Enter 'true' otherwise 'false':
+true
+-----------------------------------
+Please set up your password:
+====================================================================================================
+There are some easy steps you can follow to create strong passwords:
+* Use passphrases: a string of words, like a favorite song lyric or quote, can be easier to remember
+and harder to guess than a complex password.
+* Avoid using personally identifiable information like your name or birthdate.
+* Use a password manager to generate and store random, complex passwords.
+====================================================================================================
+diya$$$$
+-----------------------------------
+Please confirm your password:
+divya%%%%
+Password mismatched!Please enter correct password to confirm:
+haha wo dekho badsoorat
+Password mismatched!Please enter correct password to confirm:
+diya$$$$
+-----------------------------------
+====================================================================================================
+Remember, it's important to keep your passwords private and never share them with anyone else.
+ Also, avoid writing them down in an insecure location.
+====================================================================================================
+Please complete a payment of ?10000/- to book your appointment:
+Enter Bank Name:
+Canara Bank
+Enter Bank Branch:
+Polytechnic Chauraha
+Enter Account Holder Name:
+Mr. Prashant Chandola
+Enter your Account Number:
+4576245367425367423576
+Please enter correct Account number:
+345434534******
+Please enter correct Account number:
+hack kar do na
+Please enter correct Account number:
+131424324324234
+Enter CIF Number:
+2442344haha
+Please enter correct CIF Number:
+bbb888
+Please enter correct CIF Number:
+321434124443
+Enter IFSC Code:
+SVB90KJGH
+Enter correct IFSC code!:
+SC09567843C
+Enter correct IFSC code!:
+CANA1234567
+==========================================================================================================
+                                    YOUR PAYMENT IS COMPLETED!
+==========================================================================================================
+
+
+==========================================================================================================
+                                    YOUR APPOINTMENT IS BOOKED!
+==========================================================================================================
+Name of Patient:Diya Chandola
+Age:78.0
+Date of Birth:14/1/1945
+Height:135.79
+Blood Group:A+
+Body weight(in kgs):56.0
+Gender:Female
+Mobile number:7890432658
+Address:Vikas Nagar,Lucknow,Nepal
+Adhaar Number:123456780156
+Pincode:226098
+Your e-mail:diyachnad@gmail.com
+Symptoms Experienced by you:Rinkles on face.Need plastic surgery on immediate basis for a family function
+Is this your first appointment? Your respnse:true
+Patient ID Allocated:1249
+Your appointment is scheduled on :Wednesday
+==========================================================================================================
+                        KINDLY CHECK THE DEATILS FILLED BY YOU IN THE FORM!
+==========================================================================================================
+
+
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+2
+Enter the SECRET PASSKEY:
+2727
+
+==========================================================================================================
+                                           WELCOME DOCTOR!
+==========================================================================================================
+
+Enter the patient ID to fetch details of the patient:
+1247
+
+==========================================================================================================
+                                   Health Record of ABHISHEK MATHUR
+==========================================================================================================
+
+Age:20.0
+Date of Birth:13/1/2003
+Height:189.8
+Blood Group:AB+
+Body weight(in kgs):61.4
+Gender:Male
+Mobile number:6388943469
+Address:Jankipuram,lucknow,Uttar pradesh
+Adhaar Number:314487065402
+Pincode:226021
+Patient e-mail:abhishekmathurofficial@gmail.com
+Symptoms Experienced by the patient:cough and fever
+Is this your first appointment? Patient response:true
+Appointment was scheduled on :Monday
+Previous Patient ID(s):
+
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+false
+Please add prescription for Patient:
+Take cough syrup and paracitamol.3 days rest suggested.
+Enter '7' to fetch Payment Record of Patient OR enter any one digit number(excluding '7') to skip:
+7
+Please enter Patient ID:
+1247
+==========================================================================================================
+                             PAYMENT RECORD OF ABHISHEK MATHUR
+==========================================================================================================
+Enter Bank Name:State Bank of India
+Enter Bank Branch:Jankipuram
+Enter Account Holder Name:Mrs. Priyanka Mathur
+Enter your Account Number:2534623654432
+Enter CIF Number:2344433434432
+Enter IFSC Code:SBIN4567123
+==========================================================================================================
+Enter '0' to exit OR enter any no. b/w '1' & '9'(both inclusive) to continue fetch details of other patients:
+6
+Enter the patient ID to fetch details of the patient:
+1248
+
+==========================================================================================================
+                                   Health Record of KUSHAGRA SRIVASTAVA
+==========================================================================================================
+
+Age:21.0
+Date of Birth:19/2/2002
+Height:124.89
+Blood Group:B+
+Body weight(in kgs):89.56
+Gender:Male
+Mobile number:7685432097
+Address:Balaganj,Lucknow,Uttar Pradesh
+Adhaar Number:123456789012
+Pincode:226021
+Patient e-mail:kushagraocks@gmail.com
+Symptoms Experienced by the patient:Bloody stools at night
+Is this your first appointment? Patient response:true
+Appointment was scheduled on :Tuesday
+Previous Patient ID(s):
+
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+false
+Please add prescription for Patient:
+Tak
+Enter '7' to fetch Payment Record of Patient OR enter any one digit number(excluding '7') to skip:
+
+7
+Please enter Patient ID:
+1248
+==========================================================================================================
+                             PAYMENT RECORD OF KUSHAGRA SRIVASTAVA
+==========================================================================================================
+Enter Bank Name:Punjab National Bank
+Enter Bank Branch:Gomti Nagar
+Enter Account Holder Name:Mr. Kushagra Srivastava
+Enter your Account Number:75624382393432489
+Enter CIF Number:243423424242
+Enter IFSC Code:PUNB5678334
+==========================================================================================================
+Enter '0' to exit OR enter any no. b/w '1' & '9'(both inclusive) to continue fetch details of other patients:
+6
+Enter the patient ID to fetch details of the patient:
+1248
+
+==========================================================================================================
+                                   Health Record of KUSHAGRA SRIVASTAVA
+==========================================================================================================
+
+Age:21.0
+Date of Birth:19/2/2002
+Height:124.89
+Blood Group:B+
+Body weight(in kgs):89.56
+Gender:Male
+Mobile number:7685432097
+Address:Balaganj,Lucknow,Uttar Pradesh
+Adhaar Number:123456789012
+Pincode:226021
+Patient e-mail:kushagraocks@gmail.com
+Symptoms Experienced by the patient:Bloody stools at night
+Is this your first appointment? Patient response:true
+Appointment was scheduled on :Tuesday
+Previous Patient ID(s):
+
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+false
+Enter '7' to fetch Payment Record of Patient OR enter any one digit number(excluding '7') to skip:
+8
+Enter '0' to exit OR enter any no. b/w '1' & '9'(both inclusive) to continue fetch details of other patients:
+7
+Enter the patient ID to fetch details of the patient:
+1249
+
+==========================================================================================================
+                                   Health Record of DIYA CHANDOLA
+==========================================================================================================
+
+Age:78.0
+Date of Birth:14/1/1945
+Height:135.79
+Blood Group:A+
+Body weight(in kgs):56.0
+Gender:Female
+Mobile number:7890432658
+Address:Vikas Nagar,Lucknow,Nepal
+Adhaar Number:123456780156
+Pincode:226098
+Patient e-mail:diyachnad@gmail.com
+Symptoms Experienced by the patient:Rinkles on face.Need plastic surgery on immediate basis for a family function
+Is this your first appointment? Patient response:true
+Appointment was scheduled on :Wednesday
+Previous Patient ID(s):
+
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+false
+Please add prescription for Patient:
+We have to operate you with our high tech machines.for that apply facial chemical for a week before being operated in hospital.
+Enter '7' to fetch Payment Record of Patient OR enter any one digit number(excluding '7') to skip:
+7
+Please enter Patient ID:
+1249
+==========================================================================================================
+                             PAYMENT RECORD OF DIYA CHANDOLA
+==========================================================================================================
+Enter Bank Name:Canara Bank
+Enter Bank Branch:Polytechnic Chauraha
+Enter Account Holder Name:Mr. Prashant Chandola
+Enter your Account Number:131424324324234
+Enter CIF Number:321434124443
+Enter IFSC Code:CANA1234567
+==========================================================================================================
+Enter '0' to exit OR enter any no. b/w '1' & '9'(both inclusive) to continue fetch details of other patients:
+0
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+1
+Enter your Patient ID:
+1247
+Enter your password:
+abhi@2727
+
+==========================================================================================================
+                                      WELCOME BACK!Abhishek Mathur
+
+==========================================================================================================
+                                   Health Record of ABHISHEK MATHUR
+==========================================================================================================
+
+Age:20.0
+Date of Birth:13/1/2003
+Height:189.8
+Blood Group:AB+
+Body weight(in kgs):61.4
+Gender:Male
+Mobile number:6388943469
+Address:Jankipuram,lucknow,Uttar pradesh
+Adhaar Number:314487065402
+Pincode:226021
+Patient e-mail:abhishekmathurofficial@gmail.com
+Symptoms Experienced by the patient:cough and fever
+Is this your first appointment? Patient response:true
+Appointment was scheduled on :Monday
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+777
+Enter correct response!:
+ha
+Enter correct response!:
+false
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+1
+Enter your Patient ID:
+1248
+Enter your password:
+kijha
+Wrong password/Patient ID entered!
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+opi
+Incorrect Input!Please enter correct '0','1','2','3','4'or '5' for using our services:
+1
+Enter your Patient ID:
+1248
+Enter your password:
+kushu@####
+
+==========================================================================================================
+                                      WELCOME BACK!Kushagra Srivastava
+
+==========================================================================================================
+                                   Health Record of KUSHAGRA SRIVASTAVA
+==========================================================================================================
+
+Age:21.0
+Date of Birth:19/2/2002
+Height:124.89
+Blood Group:B+
+Body weight(in kgs):89.56
+Gender:Male
+Mobile number:7685432097
+Address:Balaganj,Lucknow,Uttar Pradesh
+Adhaar Number:123456789012
+Pincode:226021
+Patient e-mail:kushagraocks@gmail.com
+Symptoms Experienced by the patient:Bloody stools at night
+Is this your first appointment? Patient response:true
+Appointment was scheduled on :Tuesday
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+false
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+1
+Enter your Patient ID:
+1249
+Enter your password:
+diya$$$$
+
+==========================================================================================================
+                                      WELCOME BACK!Diya Chandola
+
+==========================================================================================================
+                                   Health Record of DIYA CHANDOLA
+==========================================================================================================
+
+Age:78.0
+Date of Birth:14/1/1945
+Height:135.79
+Blood Group:A+
+Body weight(in kgs):56.0
+Gender:Female
+Mobile number:7890432658
+Address:Vikas Nagar,Lucknow,Nepal
+Adhaar Number:123456780156
+Pincode:226098
+Patient e-mail:diyachnad@gmail.com
+Symptoms Experienced by the patient:Rinkles on face.Need plastic surgery on immediate basis for a family function
+Is this your first appointment? Patient response:true
+Appointment was scheduled on :Wednesday
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+false
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+4
+Enter your Patient ID
+1247
+Enter your password:
+abhi@2727
+Prescription by Doctor:Take cough syrup and paracitamol.3 days rest suggested.
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+4
+Enter your Patient ID
+abhi
+Enter valid Patient ID:
+1248
+Enter your password:
+kushu@####
+Prescription by Doctor:Tak
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+4
+Enter your Patient ID
+cvv
+Enter valid Patient ID:
+88i
+Enter valid Patient ID:
+1249
+Enter your password:
+sd
+WRONG PATIENT ID/PASSWORD ENTERED!
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+4
+Enter your Patient ID
+1249
+Enter your password:
+diya$$$$
+Prescription by Doctor:We have to operate you with our high tech machines.for that apply facial chemical for a week before being operated in hospital.
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+5
+Enter your Patient ID/Previous Patient ID:
+1247
+Enter your password:
+abhi@2727
+==========================================================================================================
+                             PAYMENT RECORD OF ABHISHEK MATHUR
+==========================================================================================================
+Enter Bank Name:State Bank of India
+Enter Bank Branch:Jankipuram
+Enter Account Holder Name:Mrs. Priyanka Mathur
+Enter your Account Number:2534623654432
+Enter CIF Number:2344433434432
+Enter IFSC Code:SBIN4567123
+==========================================================================================================
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+5
+Enter your Patient ID/Previous Patient ID:
+vv
+Enter correct Patient ID!:
+1248
+Enter your password:
+ku
+WRONG PATIENT ID/PASSWORD ENTERED!
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+5
+Enter your Patient ID/Previous Patient ID:
+1248
+Enter your password:
+kushu@####
+==========================================================================================================
+                             PAYMENT RECORD OF KUSHAGRA SRIVASTAVA
+==========================================================================================================
+Enter Bank Name:Punjab National Bank
+Enter Bank Branch:Gomti Nagar
+Enter Account Holder Name:Mr. Kushagra Srivastava
+Enter your Account Number:75624382393432489
+Enter CIF Number:243423424242
+Enter IFSC Code:PUNB5678334
+==========================================================================================================
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+5
+Enter your Patient ID/Previous Patient ID:
+1249
+Enter your password:
+diya$$$$
+==========================================================================================================
+                             PAYMENT RECORD OF DIYA CHANDOLA
+==========================================================================================================
+Enter Bank Name:Canara Bank
+Enter Bank Branch:Polytechnic Chauraha
+Enter Account Holder Name:Mr. Prashant Chandola
+Enter your Account Number:131424324324234
+Enter CIF Number:321434124443
+Enter IFSC Code:CANA1234567
+==========================================================================================================
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+0
+==========================================================================================================
+                                         PATIENT       FORM
+==========================================================================================================
+Enter full name of Patient:
+Abhishek Mathur
+-----------------------------------
+Enter your age(in years):
+20
+-----------------------------------
+Enter your Date of birth:
+Day:
+13
+Month:
+01
+Year:
+2003
+-----------------------------------
+Enter height(in cm):
+200.7
+-----------------------------------
+Enter your blood group:
+AB+
+-----------------------------------
+Enter your body weight(in kgs):
+78
+-----------------------------------
+Please tell your Gender:
+Male
+-----------------------------------
+Enter your Mobile Number:
+6388943469
+-----------------------------------
+Enter your address:
+Jankipuram,Lucknow,Uttar Pradesh
+-----------------------------------
+Enter your adhaar number:
+314487065402
+-----------------------------------
+Enter pincode of your area:
+226021
+-----------------------------------
+Enter your e-mail:
+abhishekmathurofficial@gmail.com
+-----------------------------------
+Please tell us about your symptoms:
+fever from past 7 days
+-----------------------------------
+Is this your first appointment? Enter 'true' otherwise 'false':
+false
+-----------------------------------
+Please enter your previous Patient Ids OR enter '11' to skip:
+/////////////////////////////////////////////////////////////////////////////////////////////
+PREVIOUS PATIENT IDs WILL BE USED BY DOCTOR TO CHECK YOUR OLD HOSPITAL RECORDS FOR REFERENCE!
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+abhi
+Enter correct Patient ID
+0
+Incorrect Patient ID! Please re enter correct patient ID:
+123
+Incorrect Patient ID! Please re enter correct patient ID:
+**
+Enter correct Patient ID
+1247
+11
+Please set up your password:
+====================================================================================================
+There are some easy steps you can follow to create strong passwords:
+* Use passphrases: a string of words, like a favorite song lyric or quote, can be easier to remember
+and harder to guess than a complex password.
+* Avoid using personally identifiable information like your name or birthdate.
+* Use a password manager to generate and store random, complex passwords.
+====================================================================================================
+abhi@2828
+-----------------------------------
+Please confirm your password:
+abhi@2828
+-----------------------------------
+====================================================================================================
+Remember, it's important to keep your passwords private and never share them with anyone else.
+ Also, avoid writing them down in an insecure location.
+====================================================================================================
+Please complete a payment of ?10000/- to book your appointment:
+Enter Bank Name:
+Bank of America
+Enter Bank Branch:
+Houston
+Enter Account Holder Name:
+Mr. Atiq Ahmed
+Enter your Account Number:
+423423244234
+Enter CIF Number:
+42423234334
+Enter IFSC Code:
+USAB233345678
+Enter correct IFSC code!:
+USAD1234098
+==========================================================================================================
+                                    YOUR PAYMENT IS COMPLETED!
+==========================================================================================================
+
+
+==========================================================================================================
+                                    YOUR APPOINTMENT IS BOOKED!
+==========================================================================================================
+Name of Patient:Abhishek Mathur
+Age:20.0
+Date of Birth:13/1/2003
+Height:200.7
+Blood Group:AB+
+Body weight(in kgs):78.0
+Gender:Male
+Mobile number:6388943469
+Address:Jankipuram,Lucknow,Uttar Pradesh
+Adhaar Number:314487065402
+Pincode:226021
+Your e-mail:abhishekmathurofficial@gmail.com
+Symptoms Experienced by you:fever from past 7 days
+Is this your first appointment? Your respnse:false
+Your new Patient ID allocated:1250
+You previous Patient Id(s):[1247]
+Your appointment is scheduled on :Thursday
+==========================================================================================================
+                        KINDLY CHECK THE DEATILS FILLED BY YOU IN THE FORM!
+==========================================================================================================
+
+
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+2
+Enter the SECRET PASSKEY:
+2727
+
+==========================================================================================================
+                                           WELCOME DOCTOR!
+==========================================================================================================
+
+Enter the patient ID to fetch details of the patient:
+1250
+
+==========================================================================================================
+                                   Health Record of ABHISHEK MATHUR
+==========================================================================================================
+
+Age:20.0
+Date of Birth:13/1/2003
+Height:200.7
+Blood Group:AB+
+Body weight(in kgs):78.0
+Gender:Male
+Mobile number:6388943469
+Address:Jankipuram,Lucknow,Uttar Pradesh
+Adhaar Number:314487065402
+Pincode:226021
+Patient e-mail:abhishekmathurofficial@gmail.com
+Symptoms Experienced by the patient:fever from past 7 days
+Is this your first appointment? Patient response:false
+Appointment was scheduled on :Thursday
+Previous Patient ID(s):
+1247,
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+true
+Enter previous Patient Id:
+vv
+Enter correct Patient ID:
+1247
+
+==========================================================================================================
+                                   Health Record of ABHISHEK MATHUR
+==========================================================================================================
+
+Age:20.0
+Date of Birth:13/1/2003
+Height:189.8
+Blood Group:AB+
+Body weight(in kgs):61.4
+Gender:Male
+Mobile number:6388943469
+Address:Jankipuram,Lucknow,Uttar Pradesh
+Adhaar Number:314487065402
+Pincode:226021
+Patient e-mail:abhishekmathurofficial@gmail.com
+Symptoms Experienced by the patient:cough and fever
+Is this your first appointment? Patient response:true
+Appointment was scheduled on :Monday
+Previous Patient ID(s):
+1247,
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+false
+Please add prescription for Patient:
+You have typhoidal fever.Take medicines and schedule another appointment
+Enter '7' to fetch Payment Record of Patient OR enter any one digit number(excluding '7') to skip:
+7
+Please enter Patient ID:
+1250
+==========================================================================================================
+                             PAYMENT RECORD OF ABHISHEK MATHUR
+==========================================================================================================
+Enter Bank Name:Bank of America
+Enter Bank Branch:Houston
+Enter Account Holder Name:Mr. Atiq Ahmed
+Enter your Account Number:423423244234
+Enter CIF Number:42423234334
+Enter IFSC Code:USAD1234098
+==========================================================================================================
+Enter '0' to exit OR enter any no. b/w '1' & '9'(both inclusive) to continue fetch details of other patients:
+0
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+0
+==========================================================================================================
+                                         PATIENT       FORM
+==========================================================================================================
+Enter full name of Patient:
+Abhishek Mathur
+-----------------------------------
+Enter your age(in years):
+20
+-----------------------------------
+Enter your Date of birth:
+Day:
+13
+Month:
+01
+Year:
+2003
+-----------------------------------
+Enter height(in cm):
+200.87
+-----------------------------------
+Enter your blood group:
+AB+
+-----------------------------------
+Enter your body weight(in kgs):
+45
+-----------------------------------
+Please tell your Gender:
+Male
+-----------------------------------
+Enter your Mobile Number:
+6388943469
+-----------------------------------
+Enter your address:
+Jankipuram,Lucknow,Uttar Pradesh
+-----------------------------------
+Enter your adhaar number:
+314487065402
+-----------------------------------
+Enter pincode of your area:
+226021
+-----------------------------------
+Enter your e-mail:
+abhishekmathurofficial@gmail.com
+-----------------------------------
+Please tell us about your symptoms:
+common cold left
+-----------------------------------
+Is this your first appointment? Enter 'true' otherwise 'false':
+false
+-----------------------------------
+Please enter your previous Patient Ids OR enter '11' to skip:
+/////////////////////////////////////////////////////////////////////////////////////////////
+PREVIOUS PATIENT IDs WILL BE USED BY DOCTOR TO CHECK YOUR OLD HOSPITAL RECORDS FOR REFERENCE!
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+1247
+1250
+11
+Please set up your password:
+====================================================================================================
+There are some easy steps you can follow to create strong passwords:
+* Use passphrases: a string of words, like a favorite song lyric or quote, can be easier to remember
+and harder to guess than a complex password.
+* Avoid using personally identifiable information like your name or birthdate.
+* Use a password manager to generate and store random, complex passwords.
+====================================================================================================
+abhi@2929
+-----------------------------------
+Please confirm your password:
+Abhi@2929
+Password mismatched!Please enter correct password to confirm:
+abhi@2929
+-----------------------------------
+====================================================================================================
+Remember, it's important to keep your passwords private and never share them with anyone else.
+ Also, avoid writing them down in an insecure location.
+====================================================================================================
+Please complete a payment of ?10000/- to book your appointment:
+Enter Bank Name:
+Bangladesh Bank of Robbers
+Enter Bank Branch:
+dhaka
+Enter Account Holder Name:
+Mr. Ghori punjabi
+Enter your Account Number:
+32132131231123
+Enter CIF Number:
+3212123123133
+Enter IFSC Code:
+BANG4567982
+==========================================================================================================
+                                    YOUR PAYMENT IS COMPLETED!
+==========================================================================================================
+
+
+==========================================================================================================
+                                    YOUR APPOINTMENT IS BOOKED!
+==========================================================================================================
+Name of Patient:Abhishek Mathur
+Age:20.0
+Date of Birth:13/1/2003
+Height:200.87
+Blood Group:AB+
+Body weight(in kgs):45.0
+Gender:Male
+Mobile number:6388943469
+Address:Jankipuram,Lucknow,Uttar Pradesh
+Adhaar Number:314487065402
+Pincode:226021
+Your e-mail:abhishekmathurofficial@gmail.com
+Symptoms Experienced by you:common cold left
+Is this your first appointment? Your respnse:false
+Your new Patient ID allocated:1251
+You previous Patient Id(s):[1247, 1250]
+Your appointment is scheduled on :Friday
+==========================================================================================================
+                        KINDLY CHECK THE DEATILS FILLED BY YOU IN THE FORM!
+==========================================================================================================
+
+
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+2
+Enter the SECRET PASSKEY:
+2727
+
+==========================================================================================================
+                                           WELCOME DOCTOR!
+==========================================================================================================
+
+Enter the patient ID to fetch details of the patient:
+1251
+
+==========================================================================================================
+                                   Health Record of ABHISHEK MATHUR
+==========================================================================================================
+
+Age:20.0
+Date of Birth:13/1/2003
+Height:200.87
+Blood Group:AB+
+Body weight(in kgs):45.0
+Gender:Male
+Mobile number:6388943469
+Address:Jankipuram,Lucknow,Uttar Pradesh
+Adhaar Number:314487065402
+Pincode:226021
+Patient e-mail:abhishekmathurofficial@gmail.com
+Symptoms Experienced by the patient:common cold left
+Is this your first appointment? Patient response:false
+Appointment was scheduled on :Friday
+Previous Patient ID(s):
+1247,1250,
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+true
+Enter previous Patient Id:
+1247
+
+==========================================================================================================
+                                   Health Record of ABHISHEK MATHUR
+==========================================================================================================
+
+Age:20.0
+Date of Birth:13/1/2003
+Height:189.8
+Blood Group:AB+
+Body weight(in kgs):61.4
+Gender:Male
+Mobile number:6388943469
+Address:Jankipuram,Lucknow,Uttar Pradesh
+Adhaar Number:314487065402
+Pincode:226021
+Patient e-mail:abhishekmathurofficial@gmail.com
+Symptoms Experienced by the patient:cough and fever
+Is this your first appointment? Patient response:true
+Appointment was scheduled on :Monday
+Previous Patient ID(s):
+1247,1250,
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+true
+Enter previous Patient Id:
+1250
+
+==========================================================================================================
+                                   Health Record of ABHISHEK MATHUR
+==========================================================================================================
+
+Age:20.0
+Date of Birth:13/1/2003
+Height:200.7
+Blood Group:AB+
+Body weight(in kgs):78.0
+Gender:Male
+Mobile number:6388943469
+Address:Jankipuram,Lucknow,Uttar Pradesh
+Adhaar Number:314487065402
+Pincode:226021
+Patient e-mail:abhishekmathurofficial@gmail.com
+Symptoms Experienced by the patient:fever from past 7 days
+Is this your first appointment? Patient response:false
+Appointment was scheduled on :Thursday
+Previous Patient ID(s):
+1247,1250,
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+false
+Please add prescription for Patient:
+your typhoid is gone.Take rest for 2 days.
+Enter '7' to fetch Payment Record of Patient OR enter any one digit number(excluding '7') to skip:
+7
+Please enter Patient ID:
+1251
+==========================================================================================================
+                             PAYMENT RECORD OF ABHISHEK MATHUR
+==========================================================================================================
+Enter Bank Name:Bangladesh Bank of Robbers
+Enter Bank Branch:dhaka
+Enter Account Holder Name:Mr. Ghori punjabi
+Enter your Account Number:32132131231123
+Enter CIF Number:3212123123133
+Enter IFSC Code:BANG4567982
+==========================================================================================================
+Enter '0' to exit OR enter any no. b/w '1' & '9'(both inclusive) to continue fetch details of other patients:
+0
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+1
+Enter your Patient ID:
+1250
+Enter your password:
+abhi@2828
+
+==========================================================================================================
+                                      WELCOME BACK!Abhishek Mathur
+
+==========================================================================================================
+                                   Health Record of ABHISHEK MATHUR
+==========================================================================================================
+
+Age:20.0
+Date of Birth:13/1/2003
+Height:200.7
+Blood Group:AB+
+Body weight(in kgs):78.0
+Gender:Male
+Mobile number:6388943469
+Address:Jankipuram,Lucknow,Uttar Pradesh
+Adhaar Number:314487065402
+Pincode:226021
+Patient e-mail:abhishekmathurofficial@gmail.com
+Symptoms Experienced by the patient:fever from past 7 days
+Is this your first appointment? Patient response:false
+Appointment was scheduled on :Thursday
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+true
+Enter previous Patient Id:
+1247
+Enter password:
+abhi@2727
+
+==========================================================================================================
+                                   Health Record of ABHISHEK MATHUR
+==========================================================================================================
+
+Age:20.0
+Date of Birth:13/1/2003
+Height:189.8
+Blood Group:AB+
+Body weight(in kgs):61.4
+Gender:Male
+Mobile number:6388943469
+Address:Jankipuram,Lucknow,Uttar Pradesh
+Adhaar Number:314487065402
+Pincode:226021
+Patient e-mail:abhishekmathurofficial@gmail.com
+Symptoms Experienced by the patient:cough and fever
+Is this your first appointment? Patient response:true
+Appointment was scheduled on :Monday
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+false
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+1
+Enter your Patient ID:
+1251
+Enter your password:
+abhi@2929
+
+==========================================================================================================
+                                      WELCOME BACK!Abhishek Mathur
+
+==========================================================================================================
+                                   Health Record of ABHISHEK MATHUR
+==========================================================================================================
+
+Age:20.0
+Date of Birth:13/1/2003
+Height:200.87
+Blood Group:AB+
+Body weight(in kgs):45.0
+Gender:Male
+Mobile number:6388943469
+Address:Jankipuram,Lucknow,Uttar Pradesh
+Adhaar Number:314487065402
+Pincode:226021
+Patient e-mail:abhishekmathurofficial@gmail.com
+Symptoms Experienced by the patient:common cold left
+Is this your first appointment? Patient response:false
+Appointment was scheduled on :Friday
+Do you want to access previous records of patient? If yes then enter 'true' otherwise 'false':
+false
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+5
+Enter your Patient ID/Previous Patient ID:
+1251
+Enter your password:
+abhi@2929
+==========================================================================================================
+                             PAYMENT RECORD OF ABHISHEK MATHUR
+==========================================================================================================
+Enter Bank Name:Bangladesh Bank of Robbers
+Enter Bank Branch:dhaka
+Enter Account Holder Name:Mr. Ghori punjabi
+Enter your Account Number:32132131231123
+Enter CIF Number:3212123123133
+Enter IFSC Code:BANG4567982
+==========================================================================================================
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+5
+Enter your Patient ID/Previous Patient ID:
+1250
+Enter your password:
+abhi@2828
+==========================================================================================================
+                             PAYMENT RECORD OF ABHISHEK MATHUR
+==========================================================================================================
+Enter Bank Name:Bank of America
+Enter Bank Branch:Houston
+Enter Account Holder Name:Mr. Atiq Ahmed
+Enter your Account Number:423423244234
+Enter CIF Number:42423234334
+Enter IFSC Code:USAD1234098
+==========================================================================================================
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+5
+Enter your Patient ID/Previous Patient ID:
+1247
+Enter your password:
+abhi@2727
+==========================================================================================================
+                             PAYMENT RECORD OF ABHISHEK MATHUR
+==========================================================================================================
+Enter Bank Name:State bank of India
+Enter Bank Branch:Jankipuram
+Enter Account Holder Name:Mrs. Priyanka Mathur
+Enter your Account Number:2534623654432
+Enter CIF Number:2344433434432
+Enter IFSC Code:SBIN4567123
+==========================================================================================================
+----------------------------------------------------
+Enter '0' for booking an appointment with the doctor
+For Patient login =>Enter '1'
+For Doctor  login =>Enter '2'
+To exit portal=>enter '3'
+To check prescription by Doctor=>Enter '4'
+To fetch your Payment Record=>Enter '5'
+----------------------------------------------------
+iii
+Incorrect Input!Please enter correct '0','1','2','3','4'or '5' for using our services:
+3
+**********************************
+THANK YOU FOR VISITING OUR PORTAL!
+**********************************
+---------------------------------------------------------------------------------------------------------------
+Apollo Hospitals is a leading healthcare group in India. It comprises of a network of 73 hospitals with over
+10,000 beds, more than 4,500 pharmacies, over 300 clinics, 1,100 diagnostic centers, and 200 telemedicine units
+The headquarters of Apollo Hospitals is located in Chennai, Tamil Nadu, India. The hospital chain provides
+quality healthcare services to its patients with modern medical technologies and expertise from highly skilled
+medical professionals. The hospitals are located across major cities in India, including Chennai, Hyderabad,
+Delhi, Mumbai, Kolkata, and Bangalore.
+---------------------------------------------------------------------------------------------------------------
+
+
+
+***********************************************************************************END*********************************************************************************
